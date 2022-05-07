@@ -7,22 +7,35 @@ console.log(soma(3, 1));
 interface IAnimal {
   nome: string;
   tipo: 'terrestre' | 'aquático';
-  executarRugido(altudaEmDecibeis: number): void;
+  domestico: boolean;
 }
 
 interface IFelino extends IAnimal {
   visaoNoturna: boolean;
 }
 
+interface ICanino extends IAnimal {
+  porte: 'pequeno' | 'médio' | 'grande';
+}
+
+type IDomestico = IFelino | ICanino;
+
+const pet: IDomestico = {
+  domestico: true,
+  nome: 'Cacau',
+  porte: 'pequeno',
+  tipo: 'terrestre',
+}
+
 const animal: IAnimal = {
   nome: 'Elefante',
   tipo: 'terrestre',
-  executarRugido: (altudaEmDecibeis) => (`${ altudaEmDecibeis }dB`),
+  domestico: false,
 }
 
 const felino: IFelino = {
   nome: 'Leão',
   tipo: 'terrestre',
   visaoNoturna: true,
-  executarRugido: (altudaEmDecibeis) => (`${ altudaEmDecibeis }dB`),
+  domestico: false,
 }
