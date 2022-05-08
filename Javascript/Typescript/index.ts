@@ -1,8 +1,12 @@
+// Function in TypeScript
+
 // function soma(a: number, b: number) {
 //   return a + b;
 // }
 
 // console.log(soma(3, 1));
+
+// Interfaces and types
 
 // interface IAnimal {
 //   nome: string;
@@ -40,9 +44,19 @@
 //   domestico: false,
 // }
 
-const input = document.getElementById('input') as HTMLInputElement;
+// Input 
 
-input.addEventListener('input', (event) => {
-  const i = event.currentTarget as HTMLInputElement; 
-  console.log(i.value);
-});
+// const input = document.getElementById('input') as HTMLInputElement;
+
+// input.addEventListener('input', (event) => {
+//   const i = event.currentTarget as HTMLInputElement; 
+//   console.log(i.value);
+// });
+
+// Generic Types
+
+function replaceNumber<T>(array: T[], value: T) {
+  return array.map(() =>  value);
+}
+
+console.log(replaceNumber([1, 2, 3], 1));
